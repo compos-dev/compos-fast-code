@@ -36,7 +36,7 @@
 ;;; --- Learned functions -------------------------------------------------
 ;;; What fast-code learns is Scheme: a named function with parameters and a
 ;;; docstring, written when an intent needs more than one existing call. It
-;;; lives in <compos-home>/packages/learned.scm as ordinary code, one block
+;;; lives in <compos-home>/fast-code/learned.scm as ordinary code, one block
 ;;; to a function, and joins the catalog like any public API, so the model,
 ;;; apropos and the palette all find it. "filter it for md files" and
 ;;; "filter it for pdf files" are one function and two calls, not two
@@ -45,7 +45,7 @@
 ;; a test points this elsewhere; #f is the real file
 (define *fast-learned-path* #f)
 (define (fast-learned-path)
-  (or *fast-learned-path* (string-append (compos-home) "/packages/learned.scm")))
+  (or *fast-learned-path* (string-append (package-data-dir 'fast-code) "/learned.scm")))
 
 ;; ((NAME BLOCK) ...): BLOCK is the function's whole text, public! included
 (define *fast-learned* '())
